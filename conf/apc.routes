@@ -1,7 +1,0 @@
-# API Client
-#~~~~
-GET     /clients                                  com.avicenna.apiclient.ApiClientCtrl.getApiClients()
-GET     /clients/:clientId/delete                 com.avicenna.apiclient.ApiClientCtrl.deleteApiClient(clientId)
-GET     /clients/:clientId/lock                   com.avicenna.apiclient.ApiClientCtrl.lockApiClient(clientId)
-GET     /clients/:clientId/unlock                 com.avicenna.apiclient.ApiClientCtrl.unlockApiClient(clientId)
-POST    /clients                                  com.avicenna.apiclient.ApiClientCtrl.saveApiClient()

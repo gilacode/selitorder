@@ -1,1 +1,0 @@
-GET    /:folderName/:referenceKey  com.avicenna.file.FileCtrl.getImage(folderName, referenceKey)

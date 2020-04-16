@@ -1,8 +1,0 @@
-GET     /                                                com.avicenna.nav.NavCtrl.UserList
-GET     /users/:username                                 com.avicenna.nav.NavCtrl.showUserNav(username)
-POST    /users                                           com.avicenna.nav.NavCtrl.saveUserNav
-GET     /templates                                       com.avicenna.nav.NavCtrl.newTmplNav
-GET     /templates/:template                             com.avicenna.nav.NavCtrl.showTmplNav(template)
-GET     /users/:username/templates/:template             com.avicenna.nav.NavCtrl.copyTmplNav(username, template)
-GET     /templates/:template/delete                      com.avicenna.nav.NavCtrl.deleteTmplNav(template)
-POST    /templates                                       com.avicenna.nav.NavCtrl.saveTmplNav

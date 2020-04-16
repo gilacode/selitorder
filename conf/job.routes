@@ -1,8 +1,0 @@
-# Job
-#~~~~
-GET     /                                   com.avicenna.job.JobCtrl.getJobs()
-GET     /:jobName                          com.avicenna.job.JobCtrl.getBatches(jobName)
-GET     /:jobName/batches/:batchId         com.avicenna.job.JobCtrl.getLogs(jobName, batchId)
-GET     /:jobName/execute                  com.avicenna.job.JobCtrl.execute(jobName)
-GET     /:jobName/start                    com.avicenna.job.JobCtrl.start(jobName)
-GET     /:jobName/stop                     com.avicenna.job.JobCtrl.stop(jobName)

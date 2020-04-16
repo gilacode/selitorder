@@ -1,1 +1,0 @@
-GET     /detail/:uuid   com.avicenna.notification.NotifCtrl.viewDetail(uuid)

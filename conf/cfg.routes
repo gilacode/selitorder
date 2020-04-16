@@ -1,4 +1,0 @@
-GET     /configs                     com.avicenna.config.AppCfgCtrl.configs
-GET     /configs/:group              com.avicenna.config.AppCfgCtrl.config(group)
-GET     /configs/:group/caches       com.avicenna.config.AppCfgCtrl.clearCache(group)
-POST    /configs/:group              com.avicenna.config.AppCfgCtrl.saveConfig(group)
