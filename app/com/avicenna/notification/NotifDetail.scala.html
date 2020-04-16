@@ -1,0 +1,58 @@
+@import com.avicenna.security.SecUserDto
+@import com.avicenna.template.TmplDto
+@import com.avicenna.template.html.TmplMain
+@import com.avicenna.util._
+@import com.avicenna.notification.NotifMgr.NotifDto
+
+@(user : SecUserDto, notif : NotifDto, tmpl: TmplDto, dateTimeUtil: DateTimeUtil)
+
+@TmplMain(tmpl, user) {
+
+    <div class="row">
+
+        <div class="@tmpl.getGrid(3)">
+
+            <div class="card">
+
+                <div class="card-body text-center">
+
+                    <center class="m-t-30">
+                        @if(user.getPhotoUrl==null) {
+                            <img src="@routes.Assets.versioned("images/user.png")" class="img-circle img-thumbnail" width="150px">
+                        } else {
+                            <img src="@notif.getCreatedBy.getPhotoUrl" class="img-circle img-thumbnail" width="150px">
+                        }
+                        <h4 class="card-title m-t-10">@notif.getCreatedBy.getDisplayName
+                        <h6 class="card-subtitle">@notif.getCreatedBy.getEmail</h6>
+                    </center>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="@tmpl.getGrid(9)">
+
+            <div class="card">
+
+                <h3 class="card-title m-b-0">@notif.getTopicSubject</h3>
+
+                <hr/>
+
+                <div class="card-body">
+
+                    <h6 class="m-b-0">@dateTimeUtil.getDateTime(notif.getCreatedAt)</h6>
+                    <small class="text-muted">@notif.getCategory.getMessage</small><br/>
+                    <small class="text-muted">@notif.getChannelDesc</small>
+
+                    <p class="m-t-10">@Html(notif.getNotifMessage)</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+}

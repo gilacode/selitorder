@@ -1,0 +1,194 @@
+@import com.avicenna.security.SecUserDto
+@import com.avicenna.template.TmplDto
+@import com.avicenna.template.html.TmplMain
+@import views.html.helper._
+@import com.avicenna.nav.NavRegistry.HeadDto
+@import com.avicenna.nav.NavMgr
+
+@(heads : List[HeadDto], templates : List[String], templateName : String, tmpl: TmplDto, user: SecUserDto)
+
+@TmplMain(tmpl, user) {
+
+    <form id="formAcl" class="form-horizontal" method="post" action="@com.avicenna.nav.routes.NavCtrl.saveTmplNav">
+
+        @CSRF.formField
+
+        <div class="row">
+
+            <div class="@tmpl.getGrid(12)">
+
+                <div class="card">
+
+                    <div class="card-body">
+
+                        <div class="row">
+
+                            @if(templateName==null) {
+
+                                <div class="@tmpl.getGrid(4)">
+
+                                    <div class="form-group row">
+
+                                        <label class="control-label text-right col-md-4">Template Name</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control default-case" id="templateName" name="templateName" value="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="@tmpl.getGrid(6)">
+
+                                    <div class="form-group row">
+
+                                        <label class="control-label text-right @tmpl.getGrid(4)"><strong>OR</strong>&nbsp;Select Template</label>
+                                        <div class="@tmpl.getGrid(8)">
+                                            <select id="selectTemplate" name="selectTemplate" class="form-control custom-select">
+                                                <option value="">Please Choose</option>
+                                                @for(template <- templates) {
+                                                    <option value="@template" @if(template.equals(templateName)){ selected="true" }>@template</option>
+                                                }
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="@tmpl.getGrid(2)">&nbsp;</div>
+
+                            } else {
+
+                                <div class="@tmpl.getGrid(4)">
+
+                                    <div class="form-group row">
+
+                                        <label class="control-label text-right col-md-4">Template Name</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control-disabled default-case" id="templateName" name="templateName" value="@templateName" readonly="true">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="@tmpl.getGrid(8) text-right">
+
+                                    <a href="@com.avicenna.nav.routes.NavCtrl.newTmplNav()" class="btn btn-info">
+                                        <i class="icon-plus"></i>&nbsp;@Messages("nav.mgt.button.new")
+                                    </a>
+
+                                    <a href="@com.avicenna.nav.routes.NavCtrl.deleteTmplNav(templateName)" class="btn btn-danger">
+                                        <i class="icon-trash"></i>&nbsp;@Messages("nav.mgt.button.delete")
+                                    </a>
+
+                                </div>
+
+                            }
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="@tmpl.getGrid(12)">
+
+                <div class="card">
+
+                    <div class="card-title">@Messages("nav.content.perm.cardtitle")</div>
+
+                    <hr/>
+
+                    <div class="card-body">
+
+                        <div class="vtabs row @tmpl.getGrid(12)">
+
+                            <ul class="nav nav-tabs tabs-vertical" role="tablist">
+
+                            @for( (head, index) <- heads.zipWithIndex) {
+                                <li class="nav-item">
+
+                                    <a class="nav-link @if(index==0) { active }" data-toggle="tab" href="#@head.getCleanTitle" role="tab">
+
+                                        <span class="hidden-sm-up"><i class="@head.getIconClass"></i></span>
+                                        <span class="hidden-xs-down">@head.getTitle</span>
+
+                                    </a>
+
+                                </li>
+                            }
+
+                            </ul>
+
+                            <div class="tab-content">
+
+                            @for( (head, index) <- heads.zipWithIndex) {
+
+                                <div class="tab-pane @if(index==0) { active }" id="@head.getCleanTitle" role="tabpanel">
+
+                                    <div class="form-group row">
+
+                                    @for(menu <- head.getMenus) {
+
+                                        <div class="@tmpl.getGrid(4)">
+
+                                            <h4>@menu.getTitle</h4>
+
+                                            @for(perm <- menu.getPerms) {
+
+                                                <div class="custom-control custom-checkbox">
+
+                                                    <input type="checkbox" name="@perm.getCode" class="custom-control-input" id="@perm.getCode" @if(perm.isChecked) { checked="true" }>
+                                                    <label class="custom-control-label" for="@perm.getCode">@perm.getTitle</label>
+
+                                                </div>
+                                            }
+
+                                        </div>
+
+                                    }
+
+                                    </div>
+
+                                </div>
+
+                            }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <hr/>
+
+                    <div class="row">
+
+                        <div class="@tmpl.getGrid(12) text-right">
+
+                            @if(tmpl.getNavMgr.hasPermission(NavMgr.Permission.NAV_ACL_UPDATE_ACL.name(), user)) {
+                                <button type="submit" id="btnSubmitAcl" class="btn btn-info m-10">
+                                    <i class="icon-drawar"></i>&nbsp;@Messages("nav.mgt.button.save")
+                                </button>
+                            }
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+}

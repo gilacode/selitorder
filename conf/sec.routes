@@ -1,0 +1,35 @@
+# Security
+#~~~~
+GET     /login          com.avicenna.security.SecCtrl.login
+GET     /logout         com.avicenna.security.SecCtrl.logout
+
+# Apis
+#~~~~~
+GET     /oauth2                com.avicenna.security.apis.ApisCtrl.oauth2
+GET     /oauth2/logout         com.avicenna.security.apis.ApisCtrl.logout
+
+# Basic Auth
+#~~~~~
+GET     /basic/signup               com.avicenna.security.basic.BasicCtrl.signup
+GET     /basic/signup/verify        com.avicenna.security.basic.BasicCtrl.doVerifySignup
+GET     /basic/login                com.avicenna.security.basic.BasicCtrl.login
+GET     /basic/logout               com.avicenna.security.basic.BasicCtrl.logout
+GET     /basic/forgotPwd            com.avicenna.security.basic.BasicCtrl.forgotPwd
+GET     /basic/verifyForgotPwd      com.avicenna.security.basic.BasicCtrl.doVerifyForgotPwd
+POST    /basic/signup               com.avicenna.security.basic.BasicCtrl.doSignup
+POST    /basic/login                com.avicenna.security.basic.BasicCtrl.doLogin
+POST    /basic/forgotPwd            com.avicenna.security.basic.BasicCtrl.doForgotPwd
+POST    /basic/changePwd            com.avicenna.security.basic.BasicCtrl.doChangePwd
+
+# Basic Users
+#~~~~~~
+GET     /basic/users                                com.avicenna.security.basic.BasicUserCtrl.showUsers
+GET     /basic/users/new                            com.avicenna.security.basic.BasicUserCtrl.newUserForm
+GET     /basic/users/:username                      com.avicenna.security.basic.BasicUserCtrl.editProfile(username)
+POST    /basic/users                                com.avicenna.security.basic.BasicUserCtrl.saveUser
+POST    /basic/users/super/:username                com.avicenna.security.basic.BasicUserCtrl.makeSuperAdmin(username)
+POST    /basic/users/notsuper/:username             com.avicenna.security.basic.BasicUserCtrl.downgradeSuperAdmin(username)
+POST    /basic/users/profile/:username              com.avicenna.security.basic.BasicUserCtrl.updateProfile(username)
+POST    /basic/users/password/change/:username      com.avicenna.security.basic.BasicUserCtrl.resetPassword(username)
+POST    /basic/users/password/reset/:username       com.avicenna.security.basic.BasicUserCtrl.changePassword(username)
+

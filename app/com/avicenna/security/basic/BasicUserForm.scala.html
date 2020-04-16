@@ -1,0 +1,129 @@
+@import com.avicenna.security.SecUserDto
+@import com.avicenna.template.TmplDto
+@import com.avicenna.template.html.TmplMain
+@import views.html.helper._
+
+@(currentUser : SecUserDto, newUser : SecUserDto, tmpl: TmplDto)
+
+@TmplMain(tmpl, currentUser) {
+
+    <form action="@com.avicenna.security.basic.routes.BasicUserCtrl.saveUser()" enctype="multipart/form-data" method="post">
+
+        @CSRF.formField
+
+        <div class="row">
+
+            <div class="@tmpl.getGrid(12)">
+
+                <div class="card">
+
+                    <div class="card-title">Create New User</div>
+
+                    <hr/>
+
+                    <div class="card-body">
+
+                        <div class="row">
+
+                            <div class="form-group @tmpl.getGrid(6)">
+
+                                <div class="row">
+
+                                    <div class="form-group @tmpl.getGrid(12)">
+
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control default-case" id="username" name="username" required="true">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group @tmpl.getGrid(12)">
+
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control default-case" id="email" name="email" required="true">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group @tmpl.getGrid(12)">
+
+                                        <label for="displayName">Display Name</label>
+                                        <input type="text" class="form-control default-case" id="displayName" name="displayName" required="true">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group @tmpl.getGrid(6)">
+
+                                <div class="row">
+
+                                    <div class="form-group @tmpl.getGrid(12)">
+
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control default-case" id="password" name="password" required="true">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group @tmpl.getGrid(12)">
+
+                                        <label for="confirmPassword">Confirm Password</label>
+                                        <input type="password" class="form-control default-case" id="confirmPassword" name="confirmPassword" required="true">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group @tmpl.getGrid(12)">
+
+                                        <div class="custom-control custom-checkbox">
+
+                                            <input type="checkbox" name="requireResetPwd" class="custom-control-input" id="requireResetPwd">
+                                            <label class="custom-control-label" for="requireResetPwd">Must change password at next logon</label>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group @tmpl.getGrid(12) text-right mt-1">
+
+                                <button type="submit" class="btn btn-info">
+                                    <i class="icon-user-follow"></i>&nbsp;Create
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+}

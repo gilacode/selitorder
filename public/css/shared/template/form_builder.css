@@ -1,0 +1,1404 @@
+.form-wrap.form-builder {
+    position: relative
+}
+
+.form-wrap.form-builder * {
+    box-sizing: border-box
+}
+
+.form-wrap.form-builder input {
+    line-height: normal
+}
+
+.form-wrap.form-builder button,.form-wrap.form-builder input,.form-wrap.form-builder optgroup,.form-wrap.form-builder select,.form-wrap.form-builder textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit
+}
+
+.form-wrap.form-builder textarea {
+    overflow: auto
+}
+
+.form-wrap.form-builder button,.form-wrap.form-builder input,.form-wrap.form-builder select,.form-wrap.form-builder textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit
+}
+
+.form-wrap.form-builder .btn-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.form-wrap.form-builder .btn-group>.btn {
+    position: relative;
+    float: left
+}
+
+.form-wrap.form-builder .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+.form-wrap.form-builder .btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0
+}
+
+.form-wrap.form-builder .btn-group .btn+.btn,.form-wrap.form-builder .btn-group .btn+.btn-group,.form-wrap.form-builder .btn-group .btn-group+.btn,.form-wrap.form-builder .btn-group .btn-group+.btn-group {
+    margin-left: -1px
+}
+
+.form-wrap.form-builder .btn-group .input-group-addon:last-child,.form-wrap.form-builder .btn-group .input-group-btn:first-child>.btn-group:not(:first-child)>.btn,.form-wrap.form-builder .btn-group .input-group-btn:first-child>.btn:not(:first-child),.form-wrap.form-builder .btn-group .input-group-btn:last-child>.btn,.form-wrap.form-builder .btn-group .input-group-btn:last-child>.btn-group>.btn,.form-wrap.form-builder .btn-group .input-group-btn:last-child>.dropdown-toggle,.form-wrap.form-builder .btn-group .input-group .form-control:last-child,.form-wrap.form-builder .btn-group>.btn:last-child:not(:first-child),.form-wrap.form-builder .btn-group>.dropdown-toggle:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.form-wrap.form-builder .btn-group>.btn.active,.form-wrap.form-builder .btn-group>.btn:active,.form-wrap.form-builder .btn-group>.btn:focus,.form-wrap.form-builder .btn-group>.btn:hover {
+    z-index: 2
+}
+
+.form-wrap.form-builder .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius: 4px
+}
+
+.form-wrap.form-builder .btn.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px
+}
+
+.form-wrap.form-builder .btn.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px
+}
+
+.form-wrap.form-builder .btn.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px
+}
+
+.form-wrap.form-builder .btn.active,.form-wrap.form-builder .btn.btn-active,.form-wrap.form-builder .btn:active {
+    background-image: none
+}
+
+.form-wrap.form-builder .input-group-addon:last-child,.form-wrap.form-builder .input-group-btn:first-child>.btn-group:not(:first-child)>.btn,.form-wrap.form-builder .input-group-btn:first-child>.btn:not(:first-child),.form-wrap.form-builder .input-group-btn:last-child>.btn,.form-wrap.form-builder .input-group-btn:last-child>.btn-group>.btn,.form-wrap.form-builder .input-group-btn:last-child>.dropdown-toggle,.form-wrap.form-builder .input-group .form-control:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.form-wrap.form-builder .input-group-addon,.form-wrap.form-builder .input-group-btn,.form-wrap.form-builder .input-group .form-control {
+    display: table-cell
+}
+
+.form-wrap.form-builder .input-group-lg>.form-control,.form-wrap.form-builder .input-group-lg>.input-group-addon,.form-wrap.form-builder .input-group-lg>.input-group-btn>.btn {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333
+}
+
+.form-wrap.form-builder .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate
+}
+
+.form-wrap.form-builder .input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0
+}
+
+.form-wrap.form-builder .form-control,.form-wrap.form-builder output {
+    font-size: 14px;
+    line-height: 1.42857143;
+    display: block
+}
+
+.form-wrap.form-builder textarea.form-control {
+    height: auto
+}
+
+.form-wrap.form-builder .form-control {
+    height: 34px;
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px
+}
+
+.form-wrap.form-builder .form-control:focus {
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.form-wrap.form-builder .form-group {
+    margin-left: 0;
+    margin-bottom: 15px
+}
+
+.form-wrap.form-builder .btn,.form-wrap.form-builder .form-control {
+    background-image: none
+}
+
+.form-wrap.form-builder .pull-right {
+    float: right
+}
+
+.form-wrap.form-builder .pull-left {
+    float: left
+}
+
+.form-wrap.form-builder .fb-required,.form-wrap.form-builder .required-asterisk {
+    color: #c10000
+}
+
+.form-wrap.form-builder .fb-checkbox-group .checkbox,.form-wrap.form-builder .fb-checkbox-group .checkbox-inline {
+    padding-left: 0
+}
+
+.form-wrap.form-builder .fb-checkbox-group .checkbox-inline input,.form-wrap.form-builder .fb-checkbox-group .checkbox input {
+    position: relative;
+    margin: 4px 0 0
+}
+
+.form-wrap.form-builder .fb-checkbox-group .checkbox-inline label,.form-wrap.form-builder .fb-checkbox-group .checkbox label {
+    padding-left: 4px
+}
+
+.form-wrap.form-builder .fb-radio-group .radio,.form-wrap.form-builder .fb-radio-group .radio-inline {
+    padding-left: 0
+}
+
+.form-wrap.form-builder .fb-radio-group .radio-inline input,.form-wrap.form-builder .fb-radio-group .radio input {
+    position: relative;
+    margin: 4px 0 0
+}
+
+.form-wrap.form-builder .fb-radio-group .radio-inline label,.form-wrap.form-builder .fb-radio-group .radio label {
+    padding-left: 4px
+}
+
+.form-wrap.form-builder .fb-checkbox-inline,.form-wrap.form-builder .fb-radio-inline {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.form-wrap.form-builder .fb-checkbox-inline:first-child,.form-wrap.form-builder .fb-radio-inline:first-child {
+    padding-left: 0
+}
+
+.form-wrap.form-builder .fb-autocomplete-list {
+    background-color: #fff;
+    display: none;
+    list-style: none;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-width: 0 1px 1px;
+    position: absolute;
+    z-index: 20;
+    max-height: 200px;
+    overflow-y: auto
+}
+
+.form-wrap.form-builder .fb-autocomplete-list li {
+    display: none;
+    cursor: default;
+    padding: 5px;
+    margin: 0;
+    transition: background-color .2s ease-in-out
+}
+
+.form-wrap.form-builder .fb-autocomplete-list li.active-option,.form-wrap.form-builder .fb-autocomplete-list li:hover {
+    background-color: rgba(0,0,0,.075)
+}
+
+.form-wrap.form-builder .cb-wrap {
+    float: right;
+    width: 26%;
+    transition: transform .25s
+}
+
+.form-wrap.form-builder .cb-wrap.pull-left .form-actions {
+    float: left
+}
+
+.form-wrap.form-builder .cb-wrap h4 {
+    margin-top: 0;
+    color: #666
+}
+
+@media (max-width: 481px) {
+    .form-wrap.form-builder .cb-wrap {
+        width:64px
+    }
+
+    .form-wrap.form-builder .cb-wrap h4 {
+        display: none
+    }
+}
+
+.form-wrap.form-builder .frmb-control {
+    margin: 0;
+    padding: 0;
+    border-radius: 5px
+}
+
+.form-wrap.form-builder .frmb-control li {
+    cursor: move;
+    list-style: none;
+    margin: 0 0 -1px;
+    padding: 10px;
+    text-align: left;
+    background: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px #c5c5c5
+}
+
+.form-wrap.form-builder .frmb-control li .control-icon {
+    width: 16px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: .2em;
+    display: inline-block
+}
+
+.form-wrap.form-builder .frmb-control li .control-icon img,.form-wrap.form-builder .frmb-control li .control-icon svg {
+    max-width: 100%;
+    height: auto
+}
+
+.form-wrap.form-builder .frmb-control li:first-child {
+    border-radius: 5px 5px 0 0;
+    margin-top: 0
+}
+
+.form-wrap.form-builder .frmb-control li:last-child {
+    border-radius: 0 0 5px 5px
+}
+
+.form-wrap.form-builder .frmb-control li:before {
+    margin-right: 10px;
+    font-size: 16px
+}
+
+.form-wrap.form-builder .frmb-control li:hover {
+    background-color: #f2f2f2
+}
+
+.form-wrap.form-builder .frmb-control li.ui-sortable-helper {
+    border-radius: 5px;
+    transition: box-shadow .25s;
+    box-shadow: 2px 2px 6px 0 #666;
+    border: 1px solid #fff
+}
+
+.form-wrap.form-builder .frmb-control li.ui-state-highlight {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: 0 none
+}
+
+.form-wrap.form-builder .frmb-control li.moving {
+    opacity: .6
+}
+
+.form-wrap.form-builder .frmb-control li.fb-separator {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    cursor: default
+}
+
+.form-wrap.form-builder .frmb-control li.fb-separator hr {
+    margin: 10px 0
+}
+
+@media (max-width: 481px) {
+    .form-wrap.form-builder .frmb-control li:before {
+        font-size:30px
+    }
+
+    .form-wrap.form-builder .frmb-control li span {
+        display: none
+    }
+}
+
+.form-wrap.form-builder .frmb-control.sort-enabled li.ui-state-highlight {
+    box-shadow: none;
+    height: 0;
+    width: 100%;
+    background: radial-gradient(ellipse at center,#545454 0,transparent 75%);
+    border: 0 none;
+    -webkit-clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+    clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+    visibility: visible;
+    overflow: hidden;
+    margin: 1px 0 3px;
+    animation: PLACEHOLDER .25s forwards
+}
+
+.form-wrap.form-builder .fb-mobile .form-actions {
+    width: 100%
+}
+
+.form-wrap.form-builder .fb-mobile .form-actions button {
+    width: 100%;
+    font-size: .85em!important;
+    display: block!important;
+    border-radius: 0!important;
+    margin-top: -1px;
+    margin-left: 0!important
+}
+
+.form-wrap.form-builder .fb-mobile .form-actions button:first-child {
+    border-radius: 5px 5px 0 0!important;
+    margin-top: 0!important;
+    border-bottom: 0 none
+}
+
+.form-wrap.form-builder .fb-mobile .form-actions button:last-child {
+    border-radius: 0 0 5px 5px!important
+}
+
+.form-wrap.form-builder .form-actions {
+    float: right;
+    margin-top: 5px
+}
+
+.form-wrap.form-builder .form-actions button {
+    border: 0 none
+}
+
+.form-wrap.form-builder .empty .frmb {
+    border: 3px dashed #ccc;
+    margin-right: 5px;
+    background-color: hsla(0,0%,100%,.25)
+}
+
+.form-wrap.form-builder .stage-wrap {
+    position: relative;
+    float: left;
+    width: 74%
+}
+
+.form-wrap.form-builder .stage-wrap.pull-right .frmb {
+    margin: 0 0 0 6px
+}
+
+@media (max-width: 481px) {
+    .form-wrap.form-builder .stage-wrap {
+        width:calc(100% - 64px)
+    }
+}
+
+.form-wrap.form-builder .stage-wrap.empty:after {
+    content: attr(data-content);
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -1em
+}
+
+.form-wrap.form-builder .frmb {
+    list-style-type: none;
+    min-height: 200px !important;
+    margin: 0 6px 0 0;
+    padding: 0;
+    transition: background-color .5s ease-in-out
+}
+
+.form-wrap.form-builder .frmb .fb-required {
+    color: #c10000
+}
+
+.form-wrap.form-builder .frmb.removing {
+    overflow: hidden
+}
+
+.form-wrap.form-builder .frmb>li:hover {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.1),0 0 8px rgba(102,175,233,.6)
+}
+
+.form-wrap.form-builder .frmb>li:hover .field-actions {
+    opacity: 1
+}
+
+.form-wrap.form-builder .frmb>li:hover li :hover {
+    background: #fefefe
+}
+
+.form-wrap.form-builder .frmb li {
+    position: relative;
+    padding: 6px;
+    clear: both;
+    margin-left: 0;
+    margin-bottom: 3px;
+    background-color: #fff;
+    transition: background-color .25s ease-in-out,margin-top .4s
+}
+
+.form-wrap.form-builder .frmb li.hidden-field {
+    background-color: hsla(0,0%,100%,.6)
+}
+
+.form-wrap.form-builder .frmb li:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px
+}
+
+.form-wrap.form-builder .frmb li:first-child .field-actions .btn:last-child {
+    border-radius: 0 5px 0 0
+}
+
+.form-wrap.form-builder .frmb li:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px
+}
+
+.form-wrap.form-builder .frmb li.no-fields label {
+    font-weight: 400
+}
+
+@keyframes PLACEHOLDER {
+    0% {
+        height: 0
+    }
+
+    to {
+        height: 15px
+    }
+}
+
+.form-wrap.form-builder .frmb li.frmb-placeholder,.form-wrap.form-builder .frmb li.ui-state-highlight {
+    height: 0;
+    padding: 0;
+    background: radial-gradient(ellipse at center,#545454 0,transparent 75%);
+    border: 0 none;
+    -webkit-clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+    clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+    visibility: visible;
+    overflow: hidden;
+    margin-bottom: 3px;
+    animation: PLACEHOLDER .25s forwards
+}
+
+.form-wrap.form-builder .frmb li.moving,.form-wrap.form-builder .frmb li.ui-sortable-helper {
+    transition: box-shadow .5s ease-in-out;
+    box-shadow: 2px 2px 6px 0 #666;
+    border: 1px solid #fff;
+    border-radius: 5px
+}
+
+.form-wrap.form-builder .frmb li.disabled-field {
+    z-index: 1;
+    position: relative;
+    overflow: visible
+}
+
+.form-wrap.form-builder .frmb li.disabled-field:hover .frmb-tt {
+    display: inline-block
+}
+
+.form-wrap.form-builder .frmb li.disabled-field [type=checkbox] {
+    float: left;
+    margin-right: 10px
+}
+
+.form-wrap.form-builder .frmb li.disabled-field h2 {
+    border-bottom: 0 none
+}
+
+.form-wrap.form-builder .frmb li.disabled-field label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666
+}
+
+.form-wrap.form-builder .frmb li.disabled-field .prev-holder {
+    cursor: default;
+    line-height: 28px;
+    padding-left: 5px
+}
+
+.form-wrap.form-builder .frmb li .close-field {
+    position: absolute;
+    color: #666;
+    left: 50%;
+    bottom: 6px;
+    background: #fff;
+    border-top: 1px solid #c5c5c5;
+    border-left: 1px solid #c5c5c5;
+    border-right: 1px solid #c5c5c5;
+    transform: translateX(-50%);
+    padding: 0 5px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    cursor: pointer;
+    transition: background-color .25s ease-in-out
+}
+
+.form-wrap.form-builder .frmb li .close-field:hover {
+    text-decoration: none
+}
+
+.form-wrap.form-builder .frmb li.button-field .prev-holder,.form-wrap.form-builder .frmb li.button-field address,.form-wrap.form-builder .frmb li.button-field blockquote,.form-wrap.form-builder .frmb li.button-field canvas,.form-wrap.form-builder .frmb li.button-field h1,.form-wrap.form-builder .frmb li.button-field h2,.form-wrap.form-builder .frmb li.button-field h3,.form-wrap.form-builder .frmb li.button-field output,.form-wrap.form-builder .frmb li.button-field p,.form-wrap.form-builder .frmb li.header-field .prev-holder,.form-wrap.form-builder .frmb li.header-field address,.form-wrap.form-builder .frmb li.header-field blockquote,.form-wrap.form-builder .frmb li.header-field canvas,.form-wrap.form-builder .frmb li.header-field h1,.form-wrap.form-builder .frmb li.header-field h2,.form-wrap.form-builder .frmb li.header-field h3,.form-wrap.form-builder .frmb li.header-field output,.form-wrap.form-builder .frmb li.header-field p,.form-wrap.form-builder .frmb li.paragraph-field .prev-holder,.form-wrap.form-builder .frmb li.paragraph-field address,.form-wrap.form-builder .frmb li.paragraph-field blockquote,.form-wrap.form-builder .frmb li.paragraph-field canvas,.form-wrap.form-builder .frmb li.paragraph-field h1,.form-wrap.form-builder .frmb li.paragraph-field h2,.form-wrap.form-builder .frmb li.paragraph-field h3,.form-wrap.form-builder .frmb li.paragraph-field output,.form-wrap.form-builder .frmb li.paragraph-field p {
+    margin: 0
+}
+
+.form-wrap.form-builder .frmb li.button-field .field-label,.form-wrap.form-builder .frmb li.header-field .field-label,.form-wrap.form-builder .frmb li.paragraph-field .field-label {
+    display: none
+}
+
+.form-wrap.form-builder .frmb li.button-field.editing .field-label,.form-wrap.form-builder .frmb li.header-field.editing .field-label,.form-wrap.form-builder .frmb li.paragraph-field.editing .field-label {
+    display: block
+}
+
+.form-wrap.form-builder .frmb li.paragraph-field .fld-label {
+    min-height: 150px;
+    overflow-y: auto
+}
+
+.form-wrap.form-builder .frmb li.checkbox-field .field-label {
+    display: none
+}
+
+.form-wrap.form-builder .frmb li.delete:hover,.form-wrap.form-builder .frmb li.delete:hover .close-field,.form-wrap.form-builder .frmb li.deleting,.form-wrap.form-builder .frmb li.deleting .close-field,.form-wrap.form-builder .frmb li:hover li.delete:hover,.form-wrap.form-builder .frmb li:hover li.delete:hover .close-field {
+    background-color: #fdd
+}
+
+.form-wrap.form-builder .frmb li.deleting {
+    z-index: 20;
+    pointer-events: none
+}
+
+.form-wrap.form-builder .frmb.disabled-field {
+    padding: 0 5px
+}
+
+.form-wrap.form-builder .frmb.disabled-field :hover {
+    border-color: transparent
+}
+
+.form-wrap.form-builder .frmb.disabled-field .form-element {
+    float: none;
+    margin-bottom: 10px;
+    overflow: visible;
+    padding: 5px 0;
+    position: relative
+}
+
+.form-wrap.form-builder .frmb .frm-holder {
+    display: none
+}
+
+.form-wrap.form-builder .frmb .tooltip {
+    left: 20px
+}
+
+.form-wrap.form-builder .frmb .prev-holder {
+    display: block
+}
+
+.form-wrap.form-builder .frmb .prev-holder .form-group {
+    margin: 0
+}
+
+.form-wrap.form-builder .frmb .prev-holder .ql-editor {
+    min-height: 125px
+}
+
+.form-wrap.form-builder .frmb .prev-holder .form-group>label:not([class=fb-checkbox-label]) {
+    display: none
+}
+
+.form-wrap.form-builder .frmb .prev-holder input[type=number],.form-wrap.form-builder .frmb .prev-holder input[type=text],.form-wrap.form-builder .frmb .prev-holder select,.form-wrap.form-builder .frmb .prev-holder textarea {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
+}
+
+.form-wrap.form-builder .frmb .prev-holder input[type=date] {
+    width: auto
+}
+
+.form-wrap.form-builder .frmb .prev-holder select[multiple] {
+    height: auto
+}
+
+.form-wrap.form-builder .frmb .prev-holder label {
+    font-weight: 400
+}
+
+.form-wrap.form-builder .frmb .prev-holder input[type=number] {
+    width: auto
+}
+
+.form-wrap.form-builder .frmb .prev-holder input[type=color] {
+    width: 60px;
+    padding: 2px;
+    display: inline-block
+}
+
+.form-wrap.form-builder .frmb .required-asterisk {
+    display: none
+}
+
+.form-wrap.form-builder .frmb .field-label,.form-wrap.form-builder .frmb .legend {
+    color: #666;
+    margin-bottom: 5px;
+    line-height: 27px;
+    font-size: 16px;
+    font-weight: 400
+}
+
+.form-wrap.form-builder .frmb .disabled-field .field-label {
+    display: block
+}
+
+.form-wrap.form-builder .frmb .other-val {
+    margin-left: 5px;
+    display: none
+}
+
+.form-wrap.form-builder .frmb .field-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0
+}
+
+.form-wrap.form-builder .frmb .field-actions a:before {
+    margin: 0
+}
+
+.form-wrap.form-builder .frmb .field-actions a:hover {
+    text-decoration: none;
+    color: #000
+}
+
+.form-wrap.form-builder .frmb .field-actions .btn {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    padding: 0 6px;
+    border-radius: 0;
+    border-color: #c5c5c5;
+    background-color: #fff;
+    color: #c5c5c5;
+    line-height: 32px;
+    font-size: 16px;
+    border-width: 0 0 1px 1px
+}
+
+.form-wrap.form-builder .frmb .field-actions .btn:first-child {
+    border-bottom-left-radius: 5px
+}
+
+.form-wrap.form-builder .frmb .field-actions .toggle-form:hover {
+    background-color: #65aac6;
+    color: #fff
+}
+
+.form-wrap.form-builder .frmb .field-actions .copy-button:hover {
+    background-color: #6fc665;
+    color: #fff
+}
+
+.form-wrap.form-builder .frmb .field-actions .del-button:hover {
+    background-color: #c66865;
+    color: #fff
+}
+
+.form-wrap.form-builder .frmb .option-actions {
+    text-align: right;
+    margin-top: 10px;
+    width: 100%;
+    margin-left: 2%
+}
+
+.form-wrap.form-builder .frmb .option-actions a,.form-wrap.form-builder .frmb .option-actions button {
+    background: #fff;
+    padding: 5px 10px;
+    border: 1px solid #c5c5c5;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: default
+}
+
+.form-wrap.form-builder .frmb .sortable-options-wrap {
+    width: 81.33333333%;
+    display: inline-block
+}
+
+.form-wrap.form-builder .frmb .sortable-options-wrap label {
+    font-weight: 400
+}
+
+@media (max-width: 481px) {
+    .form-wrap.form-builder .frmb .sortable-options-wrap {
+        display:block;
+        width: 100%
+    }
+}
+
+.form-wrap.form-builder .frmb .sortable-options {
+    display: inline-block;
+    width: 100%;
+    margin-left: 2%;
+    background: #c5c5c5;
+    margin-bottom: 0;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0
+}
+
+.form-wrap.form-builder .frmb .sortable-options>li {
+    cursor: move;
+    margin: 1px
+}
+
+.form-wrap.form-builder .frmb .sortable-options>li:first-child .remove,.radio-group-field .form-wrap.form-builder .frmb .sortable-options>li:nth-child(2) .remove {
+    display: none
+}
+
+.form-wrap.form-builder .frmb .sortable-options>li .remove {
+    position: absolute;
+    opacity: 1;
+    right: 14px;
+    height: 17px;
+    width: 17px;
+    line-height: 17px;
+    text-align: center;
+    top: 14px;
+    font-size: 18px;
+    padding: 0;
+    color: #c10000
+}
+
+.form-wrap.form-builder .frmb .sortable-options>li .remove:hover {
+    background-color: #c10000;
+    text-decoration: none;
+    color: #fff
+}
+
+.form-wrap.form-builder .frmb .sortable-options .option-selected {
+    margin: 0;
+    width: 5%
+}
+
+.form-wrap.form-builder .frmb .sortable-options input[type=text] {
+    width: calc(44.5% - 17px);
+    margin: 0 1%;
+    float: none
+}
+
+.form-wrap.form-builder .frmb .form-field .form-group {
+    width: 100%;
+    clear: left;
+    float: none
+}
+
+.form-wrap.form-builder .frmb .col-md-6 .form-elements,.form-wrap.form-builder .frmb .col-md-8 .form-elements {
+    width: 100%
+}
+
+.form-wrap.form-builder .frmb .field-options .add-area .add {
+    clear: both
+}
+
+.form-wrap.form-builder .frmb .style-wrap button.selected {
+    border: 1px solid #000;
+    margin-top: 0;
+    margin-right: 1px;
+    box-shadow: inset 0 0 0 1px #fff;
+    padding: 1px 5px
+}
+
+.form-wrap.form-builder .frmb .form-elements {
+    padding: 10px 5px;
+    background: #f7f7f7;
+    border-radius: 3px;
+    margin: 0;
+    border: 1px solid #c5c5c5;
+}
+
+.form-wrap.form-builder .frmb .form-elements .input-wrap {
+    width: 81.33333333%;
+    margin-left: 2%;
+    float: left
+}
+
+.form-wrap.form-builder .frmb .form-elements .input-wrap>input[type=checkbox] {
+    margin-top: 8px
+}
+
+.form-wrap.form-builder .frmb .form-elements .add {
+    clear: both
+}
+
+.form-wrap.form-builder .frmb .form-elements input[type=color],.form-wrap.form-builder .frmb .form-elements input[type=date],.form-wrap.form-builder .frmb .form-elements input[type=number],.form-wrap.form-builder .frmb .form-elements input[type=text],.form-wrap.form-builder .frmb .form-elements select,.form-wrap.form-builder .frmb .form-elements textarea {
+    transition: background .25s ease-in-out;
+    padding: 6px 12px;
+    border: 1px solid #c5c5c5;
+    background-color: #fff
+}
+
+@media (max-width: 481px) {
+    .form-wrap.form-builder .frmb .form-elements .input-wrap {
+        width:100%;
+        margin-left: 0;
+        float: none
+    }
+}
+
+.form-wrap.form-builder .frmb .form-elements input[type=number] {
+    width: auto
+}
+
+.form-wrap.form-builder .frmb .form-elements .btn-group {
+    margin-left: 2%
+}
+
+.col-md-6 .form-wrap.form-builder .frmb .form-elements .false-label,.col-md-6 .form-wrap.form-builder .frmb .form-elements label,.col-md-8 .form-wrap.form-builder .frmb .form-elements .false-label,.col-md-8 .form-wrap.form-builder .frmb .form-elements label {
+    display: block
+}
+
+.form-wrap.form-builder .frmb .form-elements .false-label:first-child,.form-wrap.form-builder .frmb .form-elements label:first-child {
+    width: 16.66666667%;
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+    font-weight: 700;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize
+}
+
+@media (max-width: 481px) {
+    .form-wrap.form-builder .frmb .form-elements .false-label:first-child,.form-wrap.form-builder .frmb .form-elements label:first-child {
+        display:block;
+        width: auto;
+        float: none;
+        text-align: left
+    }
+
+    .form-wrap.form-builder .frmb .form-elements .false-label:first-child.empty-label,.form-wrap.form-builder .frmb .form-elements label:first-child.empty-label {
+        display: none
+    }
+}
+
+.form-wrap.form-builder .frmb .form-elements .false-label.multiple,.form-wrap.form-builder .frmb .form-elements .false-label.other-label,.form-wrap.form-builder .frmb .form-elements .false-label.required-label,.form-wrap.form-builder .frmb .form-elements .false-label.roles-label,.form-wrap.form-builder .frmb .form-elements .false-label.toggle-label,.form-wrap.form-builder .frmb .form-elements label.multiple,.form-wrap.form-builder .frmb .form-elements label.other-label,.form-wrap.form-builder .frmb .form-elements label.required-label,.form-wrap.form-builder .frmb .form-elements label.roles-label,.form-wrap.form-builder .frmb .form-elements label.toggle-label {
+    text-align: left;
+    float: none;
+    margin-bottom: -3px;
+    font-weight: 400;
+    width: calc(81.3333% - 23px)
+}
+
+.form-wrap.form-builder .frmb .form-elements input.error {
+    border: 1px solid #c10000
+}
+
+.form-wrap.form-builder .frmb .form-elements input.fld-maxlength {
+    width: 75px
+}
+
+.form-wrap.form-builder .frmb .form-elements input.field-error {
+    background: #fefefe;
+    border: 1px solid #c5c5c5
+}
+
+.form-wrap.form-builder .frmb .form-elements label em {
+    display: block;
+    font-weight: 400;
+    font-size: .75em
+}
+
+.form-wrap.form-builder .frmb .form-elements label.maxlength-label {
+    line-height: 1em
+}
+
+.form-wrap.form-builder .frmb .form-elements .available-roles {
+    display: none;
+    padding: 10px;
+    margin: 10px 0;
+    background: #e6e6e6;
+    box-shadow: inset 0 0 2px 0 #b3b3b3
+}
+
+@media (max-width: 481px) {
+    .form-wrap.form-builder .frmb .form-elements .available-roles {
+        margin-left:0
+    }
+}
+
+.form-wrap.form-builder .frmb .form-elements .available-roles label {
+    font-weight: 400;
+    width: auto;
+    float: none;
+    display: inline
+}
+
+.form-wrap.form-builder .frmb .form-elements .available-roles input {
+    display: inline;
+    top: auto
+}
+
+.form-wrap.form-builder .autocomplete-field .sortable-options .option-selected {
+    display: none
+}
+
+.form-wrap.form-builder .fb-mobile .field-actions {
+    opacity: 1
+}
+
+.form-wrap.form-builder [tooltip] {
+    position: relative
+}
+
+.form-wrap.form-builder [tooltip]:hover:after {
+    background: rgba(0,0,0,.9);
+    border-radius: 5px 5px 5px 0;
+    bottom: 23px;
+    color: #fff;
+    content: attr(tooltip);
+    padding: 10px 5px;
+    position: absolute;
+    z-index: 98;
+    left: 2px;
+    width: 230px;
+    text-shadow: none;
+    font-size: 12px;
+    line-height: 1.5em;
+    cursor: default
+}
+
+.form-wrap.form-builder [tooltip]:hover:before {
+    border: solid;
+    border-color: #222 transparent;
+    border-width: 6px 6px 0;
+    bottom: 17px;
+    content: "";
+    left: 2px;
+    position: absolute;
+    z-index: 99;
+    cursor: default
+}
+
+.form-wrap.form-builder .tooltip-element {
+    visibility: visible;
+    color: #fff;
+    background: #000;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 16px;
+    margin: 0 5px;
+    font-size: 12px;
+    cursor: default
+}
+
+.form-wrap.form-builder .kc-toggle {
+    padding-left: 0!important
+}
+
+.form-wrap.form-builder .kc-toggle span {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    background: #e6e6e6;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 2px;
+    overflow: hidden;
+    float: left;
+    margin-right: 5px;
+    will-change: transform
+}
+
+.form-wrap.form-builder .kc-toggle span:after,.form-wrap.form-builder .kc-toggle span:before {
+    position: absolute;
+    display: inline-block;
+    top: 0
+}
+
+.form-wrap.form-builder .kc-toggle span:after {
+    position: relative;
+    content: "";
+    width: 50%;
+    height: 100%;
+    left: 0;
+    border-radius: 3px;
+    background: linear-gradient(180deg,#fff 0,#ccc);
+    border: 1px solid #999;
+    transition: transform .1s;
+    transform: translateX(0)
+}
+
+.form-wrap.form-builder .kc-toggle span:before {
+    border-radius: 4px;
+    top: 2px;
+    left: 2px;
+    content: "";
+    width: calc(100% - 4px);
+    height: 18px;
+    box-shadow: inset 0 0 1px 1px #b3b3b3;
+    background-color: transparent
+}
+
+.form-wrap.form-builder .kc-toggle input {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    margin: 0
+}
+
+.form-wrap.form-builder .kc-toggle input:checked+span:after {
+    transform: translateX(100%)
+}
+
+.form-wrap.form-builder .kc-toggle input:checked+span:before {
+    background-color: #6fc665
+}
+
+.form-wrap.form-builder:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.cb-wrap,.stage-wrap {
+    vertical-align: top
+}
+
+.cb-wrap.pull-right,.stage-wrap.pull-right {
+    float: right
+}
+
+.cb-wrap.pull-left,.stage-wrap.pull-left {
+    float: left
+}
+
+.stage-wrap h4 {
+    margin-top: 0;
+    color: #666
+}
+
+.form-elements .field-options div:hover,.frmb .legend,.frmb .prev-holder {
+    cursor: move
+}
+
+.frmb-tt {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #262626;
+    background-color: #666;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    z-index: 20;
+    text-align: left;
+    font-size: 12px;
+    pointer-events: none
+}
+
+.frmb-tt:before {
+    border-color: #262626 transparent;
+    bottom: -11px
+}
+
+.frmb-tt:after,.frmb-tt:before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px 10px 0;
+    border-color: #666 transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-left: -10px;
+    bottom: -10px;
+    left: 20px
+}
+
+.frmb-tt a {
+    text-decoration: underline;
+    color: #fff
+}
+
+.fb-mobile .frmb li .del-button,.fb-mobile .frmb li .toggle-form,.frmb li:hover .del-button,.frmb li:hover .toggle-form {
+    opacity: 1
+}
+
+.frmb-xml .ui-dialog-content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 12px;
+    padding: 0 30px;
+    margin-top: 0
+}
+
+.toggle-form {
+    opacity: 0
+}
+
+.toggle-form:hover {
+    border-color: #ccc
+}
+
+.toggle-form:before {
+    margin: 0
+}
+
+.formb-field-vars .copy-var {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: #b3b3b3;
+    text-indent: -9999px
+}
+
+.ui-button .ui-button-text {
+    line-height: 0
+}
+
+.form-builder-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+    z-index: 10
+}
+
+.form-builder-overlay.visible {
+    display: block
+}
+
+.form-builder-dialog {
+    position: absolute;
+    border-radius: 5px;
+    background: #fff;
+    z-index: 20;
+    transform: translate(-50%,-50%);
+    top: 0;
+    left: 0;
+    padding: 10px;
+    box-shadow: 0 3px 10px #000;
+    min-width: 166px;
+    max-height: 80%;
+    overflow-y: scroll
+}
+
+.form-builder-dialog h3 {
+    margin-top: 0
+}
+
+.form-builder-dialog.data-dialog {
+    width: 65%;
+    background-color: #23241f
+}
+
+.form-builder-dialog.data-dialog pre {
+    background: none;
+    border: 0 none;
+    box-shadow: none;
+    margin: 0;
+    color: #f2f2f2
+}
+
+.form-builder-dialog.positioned {
+    transform: translate(-50%,-100%)
+}
+
+.form-builder-dialog.positioned .button-wrap:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 10px solid #fff;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,10px)
+}
+
+.form-builder-dialog .button-wrap {
+    position: relative;
+    margin-top: 10px;
+    text-align: right;
+    clear: both
+}
+
+.form-builder-dialog .button-wrap .btn {
+    margin-left: 10px
+}
+
+/*
+ * Form Builder Styling
+ */
+
+.fb-container-initial {
+    width : 100%;
+    border : 1px dotted #c0c0c0;
+    vertical-align : middle;
+}
+
+h6.card-title {
+    margin-bottom: 20px !important;
+}
+
+.fb-input {
+    margin: 2px;
+    width : 100%;
+}
+
+.rendered-form label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px !important;
+    font-weight: lighter !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px;
+}
+
+.rendered-form .radio-inline,
+.rendered-form .checkbox-inline {
+    display: inline-block;
+}
+
+.rendered-form .radio-inline:not(:first-child),
+.rendered-form .checkbox-inline:not(:first-child) {
+    margin-left: 20px;
+}
+
+.rendered-form .radio-inline label,
+.rendered-form .checkbox-inline label,
+.rendered-form .radio label,
+.rendered-form .checkbox label{
+    margin-left: 5px;
+}
+
+.rendered-form .radio-inline input[type="radio"],
+.rendered-form .checkbox-inline input[type="checkbox"] {
+    margin-top: -10px;
+    vertical-align: middle;
+}
+
+.rendered-form .radio input[type="radio"],
+.rendered-form .checkbox input[type="checkbox"] {
+    margin-top: -10px;
+    vertical-align: middle;
+}
+
+.fb-required {
+    margin-left: 5px;
+    color: red;
+}
+
+.rendered-form h1 {
+    font-size: 18px;
+    line-height: 1.2;
+    color: inherit;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 500;
+}
+
+.rendered-form p {
+    font-weight: 600;
+}
+
+.rendered-form .form-group {
+    margin-left: 10px !important;
+    margin-right: 10px;
+}
+
+.fb-select select {
+    padding: .375rem 1.75rem .375rem .75rem;
+    line-height: 1.5;
+    vertical-align: middle;
+    background-size: 8px 10px;
+    border: 1px solid #e9ecef;
+    border-radius: .25rem;
+    width: 100%;
+    background-color: #fff;
+    font-size: .875rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    min-height: 38px;
+    display: initial;
+}
+
+.fb-autocomplete-list {
+    background-color: #fff;
+    display: none;
+    list-style: none;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-width: 0 1px 1px;
+    position: absolute;
+    z-index: 20;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.vtabs .tab-content {
+    padding: 0px !important;
+}

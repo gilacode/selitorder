@@ -1,0 +1,62 @@
+@import com.avicenna.security.SecUserDto
+@import com.avicenna.template.TmplDto
+@import com.avicenna.template.html.TmplMain
+@import com.avicenna.job.JobMgr.JobDto
+
+@(jobs : List[JobDto], tmpl: TmplDto, user: SecUserDto)
+
+@TmplMain(tmpl, user) {
+
+    <div class="row">
+
+        <div class="@tmpl.getGrid(12)">
+
+            <div class="card">
+
+                <div class="card-title">Batch Job</div>
+
+                <hr/>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered table-striped dataTable" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Group Name</th>
+                                <th>Group Description</th>
+                                <th>Job Name</th>
+                                <th>Job Description</th>
+                                <th>Cron Schedule</th>
+                                <th>Active</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        @for( (job, index) <- jobs.zipWithIndex ) {
+                            <tr>
+                                <td>@job.getGroupName</td>
+                                <td>@job.getGroupDesc</td>
+                                <td>@job.getJobName</td>
+                                <td>@job.getJobDesc</td>
+                                <td class="text-center">@job.getJobCfg.getDesc</td>
+                                <td>@job.isRunning</td>
+                                <td width="30px" class="text-center">
+                                    <a class="btn btn-info btn-circle btn-sm" href="@com.avicenna.job.routes.JobCtrl.getBatches(job.getJobName)">
+                                        <i class="icon-arrow-right-circle"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+}

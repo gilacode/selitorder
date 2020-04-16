@@ -1,0 +1,162 @@
+@import com.avicenna.security.SecUserDto
+@import com.avicenna.security.basic.html.BasicUserPartial
+@import com.avicenna.security.basic.html.BasicPasswordPartial
+@import com.avicenna.security.basic.html.BasicResetPwdPartial
+@import com.avicenna.security.basic.html.BasicMakeAdminPartial
+@import com.avicenna.template.TmplDto
+@import com.avicenna.template.html.TmplMain
+@import com.avicenna.audit.AuditMgr.AuditDto
+@import com.avicenna.util._
+@import play.api.i18n.Messages
+@import com.avicenna.notification.NotifMgr.NotifDto
+@import com.avicenna.nav.NavMgr
+
+@(currentUser : SecUserDto, user : SecUserDto, audits : List[AuditDto], notifs : List[NotifDto], tmpl: TmplDto, dateTimeUtil: DateTimeUtil)
+
+@TmplMain(tmpl, currentUser) {
+
+    <div class="row">
+
+        <div class="@tmpl.getGrid(4)">
+
+            <div class="card">
+                <div class="card-body">
+
+                    @BasicUserPartial(currentUser, user, tmpl, "100px", false, false, true)
+
+                </div>
+            </div>
+
+            @BasicMakeAdminPartial(currentUser, user, tmpl)
+
+            @if(currentUser.getUsername.equals(user.getUsername)) {
+
+                @BasicPasswordPartial(currentUser, user, tmpl)
+
+            } else {
+
+                @BasicResetPwdPartial(currentUser, user, tmpl)
+
+            }
+
+        </div>
+
+        <div class="@tmpl.getGrid(8)">
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <div class="vtabs row @tmpl.getGrid(12)">
+
+                        <ul class="nav nav-tabs customtab2" role="tablist">
+
+                            <li class="nav-item">
+
+                                <a class="nav-link active" data-toggle="tab" href="#notification" role="tab">
+
+                                    <span class="hidden-sm-up"><i class="fa fa-bullhorn"></i></span>
+                                    <span class="hidden-xs-down">@Messages("profile.tab.title.notification")</span>
+
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item">
+
+                                <a class="nav-link" data-toggle="tab" href="#activity" role="tab">
+
+                                    <span class="hidden-sm-up"><i class="fa fa-calendar"></i></span>
+                                    <span class="hidden-xs-down">@Messages("profile.tab.title.activity")</span>
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div class="tab-pane active" id="notification" role="tabpanel">
+
+                                <table class="table table-bordered table-striped dataTable" width="100%">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Date / Time</th>
+                                            <th>From</th>
+                                            <th>Notification</th>
+                                            <th>Read</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                    @for((notif, index) <- notifs.zipWithIndex){
+                                        <tr>
+                                            <td class="text-center" width="150px">@dateTimeUtil.getDateTime(notif.getCreatedAt)</td>
+                                            <td width="200px">
+                                                @if(notif.getCreatedBy.getPhotoUrl==null) {
+                                                    <img src="@routes.Assets.versioned("images/user.png")" class="img-circle img-thumbnail" width="40">
+                                                } else {
+                                                    <img src="@notif.getCreatedBy.getPhotoUrl" class="img-circle img-thumbnail" width="40">
+                                                }
+                                            <span>@notif.getCreatedBy.getDisplayName</span>
+                                            </td>
+                                            <td>@notif.getTopicSubject</td>
+                                            <td class="text-center">
+                                                @if(notif.isAlreadyRead) {
+                                                    <i class="fa fa-check text-success"></i>
+                                                }
+                                            </td>
+                                            <td width="30px">
+                                                <a class="btn btn-info btn-circle" href="@com.avicenna.notification.routes.NotifCtrl.viewDetail(notif.getId.toString)"><i class="icon-magnifier-add"></i> </a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                            <div class="tab-pane" id="activity" role="tabpanel">
+
+                                <table class="table table-bordered table-striped dataTable" width="100%">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Date / Time</th>
+                                            <th>Log</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                    @for((audit, index) <- audits.zipWithIndex){
+                                        <tr>
+                                            <td class="text-center">@dateTimeUtil.getDateTime(audit.getCreatedAt)</td>
+                                            <td>@audit.getLog</td>
+                                        </tr>
+                                    }
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+}

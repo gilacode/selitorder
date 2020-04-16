@@ -1,0 +1,137 @@
+@import com.avicenna.security.SecUserDto
+@import com.avicenna.template.TmplDto
+@import com.avicenna.template.html.TmplMain
+@import com.avicenna.util._
+@import com.avicenna.nav.NavMgr
+@import com.avicenna.security.basic.html.BasicUserPartial
+@import com.avicenna.security.basic.BasicNav
+@import com.avicenna.security.basic.BasicUserCtrl.Filter
+
+@(currentUser : SecUserDto, users : List[SecUserDto], statusFilter : List[Filter], typeFilter : List[Filter], tmpl: TmplDto, dateTimeUtil: DateTimeUtil, hideNewButton : Boolean, filterUrl : String)
+
+@TmplMain(tmpl, currentUser) {
+
+    <div class="row">
+
+        <div class="@tmpl.getGrid(2)">
+
+            <div class="card">
+
+                <div class="card-title">@Messages("security.list.filter.cardtitle")</div>
+
+                <hr/>
+
+                <div class="card-body">
+
+                    <div class="row">
+
+                        <div class="form-group @tmpl.getGrid(12)">
+                            <label for="selectStatus">Status</label>
+                            <select id="selectStatus" name="selectStatus" class="form-control custom-select">
+                            @for(userStatus <- statusFilter) {
+                                <option value="@userStatus.getCode()" @if(userStatus.isChecked){ selected="true" }>@userStatus.getDesc</option>
+                            }
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="form-group @tmpl.getGrid(12)">
+                            <label for="selectType">Type</label>
+                            <select id="selectType" name="selectType" class="form-control custom-select">
+                            @for(userType <- typeFilter) {
+                                @if(!userType.isInternal) {
+                                    <option value="@userType.getCode" @if(userType.isChecked) { selected="true" }>@userType.getDesc</option>
+                                }
+                            }
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr/>
+
+                <div class="card-footer">
+
+                    <a type="button" id="btnFilterUsers" class="btn btn-info" data-filterurl="@filterUrl">
+                        <i class="icon-chemistry"></i>&nbsp;Filter
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="@tmpl.getGrid(10)">
+
+            <div class="card">
+
+                <div class="card-title">
+                    @Messages("security.user.list.table")
+
+                    @if(!hideNewButton) {
+                        @if(tmpl.getNavMgr.hasPermission(BasicNav.Permission.SEC_USR_UPD_PROF.name(), currentUser)) {
+
+                            <a class="btn btn-info pull-right m-r-10" href="@com.avicenna.security.basic.routes.BasicUserCtrl.newUserForm()">
+                                <i class="icon-plus"></i>&nbsp;New
+                            </a>
+
+                        }
+                    }
+                </div>
+
+                <hr/>
+
+                <div class="card-body">
+
+                    <div class="row">
+
+                        <div class="@tmpl.getGrid(12)">
+
+                            <table class="table table-bordered table-striped dataTable" width="100%">
+
+                                <thead>
+                                    <tr>
+                                        <th>Photo</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Display Name</th>
+                                        <th>Mobile No</th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                @for((user, index) <- users.zipWithIndex){
+                                    <tr>
+                                        @BasicUserPartial(currentUser, user, tmpl, "50px", true, false, false)
+                                        <td width="30px">
+                                            <a class="btn btn-info btn-circle" href="@user.getRedirectUrl">
+                                                <i class="icon-arrow-right-circle"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+}

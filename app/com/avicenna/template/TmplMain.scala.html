@@ -1,0 +1,167 @@
+@import com.avicenna.security.SecUserDto
+@import com.avicenna.template.TmplDto
+@import com.avicenna.template.html._
+
+@(dto: TmplDto, user: SecUserDto)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/ico" sizes="32x32" href="@routes.Assets.versioned("images/logo-bg-blue.ico")">
+        <title>@dto.getTitle</title>
+
+        <!-- Jquery CSS -->
+        <link href="@routes.Assets.versioned("bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("bower_components/jquery-auto-complete/jquery.auto-complete.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("bower_components/select2/dist/css/select2.min.css")" rel="stylesheet" type="text/css" />
+
+        <!-- Jquery UI CSS -->
+        <link href="@routes.Assets.versioned("bower_components/jquery-ui/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
+
+        <!-- Data tables -->
+        <link href="@routes.Assets.versioned("bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("bower_components/datatables.net-select-bs4/css/select.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("bower_components/datatables.net-scroller-bs4/css/scroller.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("bower_components/datatables.net-rowgroup-bs4/css/rowGroup.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+
+        <!-- Bootstrap CSS -->
+        <link href="@routes.Assets.versioned("bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("bower_components/sweetalert2/dist/sweetalert2.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css")" rel="stylesheet" type="text/css" />
+
+        <!-- Icon font -->
+        <link href="@routes.Assets.versioned("css/icons/font-awesome/css/font-awesome.css")" rel="stylesheet" type="text/css" >
+        <link href="@routes.Assets.versioned("css/icons/material-design-iconic-font/css/materialdesignicons.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("css/icons/material-design-iconic-font/css/material-design-iconic-font.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("css/icons/simple-line-icons/css/simple-line-icons.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("css/icons/medical_icons.css")" rel="stylesheet" type="text/css" >
+
+        <!-- Print JS -->
+        <link href="@routes.Assets.versioned("css/print.min.css")" rel="stylesheet" type="text/css" >
+
+        <!-- Theme CSS -->
+        <link href="@routes.Assets.versioned("css/shared/template/template_base.min.css")" rel="stylesheet" type="text/css" />
+
+        <!-- Custom CSS -->
+        <link href="@routes.Assets.versioned("css/shared/template/tab.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("css/shared/template/template.css")" rel="stylesheet" type="text/css" />
+        <link href="@routes.Assets.versioned("css/shared/template/sidebar.css")" rel="stylesheet" type="text/css" />
+
+
+        <!-- Specific CSS -->
+        @if(dto.getCssPath!=null) {
+            <link href="@routes.Assets.versioned(dto.getCssPath)" rel="stylesheet" type="text/css" />
+        }
+
+        <!-- Jquery / Bootstrap -->
+        <script src="@routes.Assets.versioned("bower_components/jquery/dist/jquery.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/popper.js/dist/umd/popper.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/popper.js/dist/umd/popper-utils.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/bootstrap/dist/js/bootstrap.min.js")" type="text/javascript"></script>
+        <!-- load branding -->
+        <script src="@routes.Assets.versioned("js/branding.js")"></script>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="@routes.Assets.versioned("bower_components/html5shiv/dist/html5shiv.min.js")"></script>
+        <script src="@routes.Assets.versioned("bower_components/html5shiv/dist/html5shiv-printshiv.min.js")"></script>
+        <script src="@routes.Assets.versioned("bower_components/respond/dest/respond.min.js")"></script>
+        <![endif]-->
+
+    </head>
+
+    <body class="skin-blue fixed-layout">
+
+        <div class="preloader">
+            <div class="loader">
+                <div class="text-center">
+                    <img src="@dto.getSpinnerUrl" width="64" height="64">
+                    <p class="loader__label">@dto.getAppName</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="main-wrapper">
+            <header class="topbar" id="include_top">@TmplTopnav(dto, user)</header>
+            <aside class="left-sidebar" id="include_sidebar">@TmplSidebar(dto, user)</aside>
+            <div class="page-wrapper" id="include_content">
+                @TmplNotification(dto)
+                <div class="container-fluid">
+                    @content
+                    @TmplRPanel(dto, user)
+                </div>
+            </div>
+        </div>
+
+        <!-- JS loaded after everyone else loaded -->
+        <script type="text/javascript" src="@routes.Assets.versioned("js/footer.js")" type="text/javascript"></script>
+
+        <!-- Metabase -->
+        <script src="@routes.Assets.versioned("bower_components/iframe-resizer/js/iframeResizer.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/iframe-resizer/js/iframeResizer.contentWindow.min.js")" type="text/javascript"></script>
+
+        <!-- Jquery Plugins -->
+        <script src="@routes.Assets.versioned("bower_components/jquery-ui-sortable/jquery-ui-sortable.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/jquery-auto-complete/jquery.auto-complete.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/select2/dist/js/select2.full.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/select2/dist/js/i18n/id.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/autosize/dist/autosize.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/dirrty/dist/jquery.dirrty.js")" type="text/javascript"></script>
+
+        <!-- Jquery UI Plugins -->
+        <script src="@routes.Assets.versioned("bower_components/jquery-ui/jquery-ui.js")" type="text/javascript"></script>
+
+        <!-- Bootstrap plugins -->
+        <script src="@routes.Assets.versioned("bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/sweetalert2/dist/sweetalert2.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/moment/min/moment.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js")" type="text/javascript"></script>
+
+        <!-- Data tables -->
+        <script src="@routes.Assets.versioned("bower_components/datatables.net/js/jquery.dataTables.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/datatables.net-scroller/js/dataTables.scroller.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/datatables.net-select/js/dataTables.select.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/datatables.net-buttons/js/dataTables.buttons.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/datatables.net-buttons/js/buttons.print.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/datatables.net-responsive/js/dataTables.responsive.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js")" type="text/javascript"></script>
+
+        <!-- Print JS -->
+        <script src="@routes.Assets.versioned("js/print.min.js")" type="text/javascript"></script>
+
+        <!-- Theme Javascript -->
+        <script src="@routes.Assets.versioned("js/shared/template/template.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("js/shared/template/sidebarmenu.js")" type="text/javascript"></script>
+
+        <!-- Global placeholder for script -->
+        <script src="@routes.Assets.versioned("js/global.js")" type="text/javascript"></script>
+
+        <!-- JsMessage -->
+        <script type="text/javascript" src="@com.avicenna.template.routes.TmplCtrl.jsMessages" type="text/javascript"></script>
+
+        <!-- Specific CSS -->
+        @if(dto.getJsPath!=null) {
+            <script type="text/javascript" src="@routes.Assets.versioned(dto.getJsPath)" type="text/javascript"></script>
+        }
+
+        <!-- Input Mask -->
+        <script src="@routes.Assets.versioned("bower_components/inputmask/dist/inputmask/inputmask.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/inputmask/dist/inputmask/inputmask.extensions.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/inputmask/dist/inputmask/inputmask.numeric.extensions.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bower_components/inputmask/dist/inputmask/jquery.inputmask.js")" type="text/javascript"></script>
+    </body>
+</html>

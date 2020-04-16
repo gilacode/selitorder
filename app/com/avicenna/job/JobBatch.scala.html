@@ -1,0 +1,65 @@
+@import com.avicenna.job.JobMgr.{BatchDto, JobDto}
+@import com.avicenna.security.SecUserDto
+@import com.avicenna.template.TmplDto
+@import com.avicenna.template.html.TmplMain
+
+@(job : JobDto, batches : List[BatchDto], tmpl: TmplDto, user: SecUserDto)
+
+@TmplMain(tmpl, user) {
+
+    <div class="row">
+
+        <div class="@tmpl.getGrid(12)">
+
+            <div class="card">
+
+                <div class="card-title">@job.getJobName - @job.getJobDesc</div>
+
+                <hr/>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered table-striped dataTable" width="100%">
+
+                        <thead>
+                            <tr>
+                                <th>Batch Date / Time</th>
+                                <th>Batch Id</th>
+                                <th>Success</th>
+                                <th>Cancelled</th>
+                                <th>Processed</th>
+                                <th>Elapsed</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @for((batch, index) <- batches.zipWithIndex){
+                                <tr>
+                                    <td>@batch.getBatchDate</td>
+                                    <td>@batch.getBatchId</td>
+                                    <td class="text-center">@batch.getSuccess</td>
+                                    <td class="text-center">@batch.getCancelled</td>
+                                    <td class="text-center">@batch.getProcessed</td>
+                                    <td class="text-center">@batch.getElapsed</td>
+                                    <td width="30px" class="text-center">
+                                        <a class="btn btn-info btn-circle btn-sm" href="@com.avicenna.job.routes.JobCtrl.getLogs(job.getJobName, batch.getBatchId)">
+                                            <i class="icon-arrow-right-circle"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+}
